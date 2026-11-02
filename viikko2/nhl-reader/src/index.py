@@ -15,6 +15,8 @@ def main():
         if player.nationality == 'FIN':
             players.append(player)
 
+    players = sorted(players, key=lambda player: player.goals + player.assists, reverse=True)
+
     print("Players from FIN:")
     print()
 
