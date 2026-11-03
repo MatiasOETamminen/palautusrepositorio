@@ -9,4 +9,6 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = []
+dev = [
+    "pylint>=4.1.3",
+]

@@ -14,7 +14,7 @@ NATIONALITIES = [
     "NOR", "UZB", "LAT", "AUS"
 ]
 
-def main():
+def main(): # pylint: disable=too-many-statements
     console = Console()
 
     console.print("Seasons:", "/".join(SEASONS))
