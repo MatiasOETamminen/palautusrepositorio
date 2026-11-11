@@ -8,9 +8,6 @@ class AppLibrary:
     def reset_application(self):
         requests.post(f"{self._base_url}/tests/reset")
 
-    def go_to_starting_page(self):
-        requests.get(f"{self._base_url}")
-
     def create_user(self, username, password):
         data = {
             "username": username,
