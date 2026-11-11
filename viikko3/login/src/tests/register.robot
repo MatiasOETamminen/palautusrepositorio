@@ -34,6 +34,48 @@ Register With Username That Is Already In Use
     Click  button >> text=Register
     Registration Should Fail With Message  User with username kalle already exists
 
+Register With Password Containing Letters And Numbers
+    Set Username  user_numbers
+    Set Password  kalle123
+    Set Password Confirmation  kalle123
+    Click  button >> text=Register
+    Registration Should Succeed
+
+Register With Password Containing Special Character
+    Set Username  user_special
+    Set Password  kalle#abc
+    Set Password Confirmation  kalle#abc
+    Click  button >> text=Register
+    Registration Should Succeed
+
+Register With Only Lowercase Letters Password
+    Set Username  user_onlyletters1
+    Set Password  kallekalle
+    Set Password Confirmation  kallekalle
+    Click  button >> text=Register
+    Registration Should Fail With Message  Password must include non-letter characters
+
+Register With Only Uppercase Letters Password
+    Set Username  user_onlyletters2
+    Set Password  KalleKalle
+    Set Password Confirmation  KalleKalle
+    Click  button >> text=Register
+    Registration Should Fail With Message  Password must include non-letter characters
+
+Register With Matching Password And Confirmation
+    Set Username  user_pw_match
+    Set Password  validpw123
+    Set Password Confirmation  validpw123
+    Click  button >> text=Register
+    Registration Should Succeed
+
+Register With Nonmatching Password And Confirmation
+    Set Username  user_pw_mismatch
+    Set Password  validpw123
+    Set Password Confirmation  validpw124
+    Click  button >> text=Register
+    Registration Should Fail With Message  Password and password confirmation do not match
+
 *** Keywords ***
 Reset Application Create User And Go To Register Page
     Reset Application
