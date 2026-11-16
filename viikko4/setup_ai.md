@@ -1,0 +1,3 @@
+OpenCodeen oli jälleen tullut päivityksiä edellisen viikon jälkeen. Siirryin uuden OpenCode-version lisäksi käyttämään GPT-6.1-mallia. Minulla on ollut vaikeuksia saada agentti kysymään lupaa tiedostomuokkauksiin, vaikka olen asettanut lupa-asetukset halutuiksi. Bash-komentoihin agentti kyllä kysyy lupaa.
+
+Tästä huolimatta agentin kanssa työskentely tässä tehtävässä oli suhteellisen kivutonta. Aluksi agentti laittoi setUp-metodiin vain kaikille testeille yhteiset alustukset, mutta siirsi kaikki varasto_saldo-metodin ja varasto_hae_tuote-metodin toteutukset sinne toisella promptilla. Mihinkään muuhun agentti ei koskenut. Toisin kuin viime viikolla, nyt agentti myös onnistuneesti suoritti testit itse.
