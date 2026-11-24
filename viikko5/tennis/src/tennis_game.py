@@ -15,11 +15,16 @@ class TennisGame:
     def get_score_difference(self):
         return self.player1_score - self.player2_score
 
-    def get_advantage(self):
+    def has_player_reached_four_points(self):
         return max(self.player1_score, self.player2_score) >= 4
 
-    def get_winning_player(self):
-        return "player1" if self.get_score_difference() > 0 else "player2"
+    def get_leading_player(self):
+        if self.get_score_difference() > 0:
+            return "player1"
+        elif self.get_score_difference() < 0:
+            return "player2"
+        else:
+            return None
 
     def get_score(self):
         if self.get_score_difference() == 0:
@@ -27,11 +32,11 @@ class TennisGame:
                 score = TennisGame.SCORES[self.player1_score] + "-All"
             else:
                 score = "Deuce"
-        elif self.get_advantage():
+        elif self.has_player_reached_four_points():
             if abs(self.get_score_difference()) == 1:
-                score = "Advantage " + self.get_winning_player()
+                score = "Advantage " + self.get_leading_player()
             else:
-                score = "Win for " + self.get_winning_player()
+                score = "Win for " + self.get_leading_player()
         else:
             score = TennisGame.SCORES[self.player1_score] + "-" + TennisGame.SCORES[self.player2_score]
         return score
